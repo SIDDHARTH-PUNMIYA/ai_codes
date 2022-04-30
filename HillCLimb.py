@@ -3,7 +3,7 @@ mat=[[1,2,3,4],
        [10,10,9,9],
        [10,12,9,16]]
 
-
+max = 0
 print("The Matrix Is")
 for i in range(len(mat)):
     print(mat[i])
