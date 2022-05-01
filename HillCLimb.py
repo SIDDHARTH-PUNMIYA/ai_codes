@@ -1,7 +1,7 @@
 mat=[[1,2,3,4],
-       [5,6,7,8],
-       [10,10,9,9],
-       [10,12,9,16]]
+     [5,6,7,8],
+     [10,10,9,9],
+     [10,12,9,16]]
 
 max = 0
 print("The Matrix Is")
@@ -18,6 +18,8 @@ flag=0
 while cVal>pVal:
     flag=-1
     print("Current Value = {}".format(cVal))
+
+    print(pVal,cVal)
     pVal=cVal
     max=cVal
     if x+1<len(mat) and max<mat[x+1][y]:

@@ -1,10 +1,5 @@
 node = int(input("ENTER THE NUMBER OF NODES  IN THE GRAPH "))
-# L = [[]] * node
-#
-# # creation of graph
-# for i in range(node):
-#     for j in range(node):
-#         L[i].append(int(input("ENTER THE EDGE VALUE FOR  {}".format(i))))
+
 L=[ [0,1,0,0,0,0],
     [1,0,1,1,0,0],
     [0,0,0,1,0,0],
@@ -13,11 +8,11 @@ L=[ [0,1,0,0,0,0],
     [0,0,1,0,0,0]
     ]
 
-
 # main implementation
 def bfs(node, L):
     n = int(input("ENTER THE SRC NODE FROM 0 TO {}".format(node)))
     queue = [n]
+    parent= [-1]*node
     res = [True] * node
     res[n] = False
     f = 1
@@ -30,10 +25,20 @@ def bfs(node, L):
         for j in range(len(L[var])):
             if (L[var][j] == 1 and res[j] == True):
                 queue.append(j)
+                parent[j] =var
                 res[j] = False
-        print(queue)
+        # print(queue)
     if f == 0:
         print("The destination is  found")
+    elif f==1:
+        print("The destination is not found")
+    # print(parent)
+    val = des
+    while parent[val] != -1:
+        print(val,end="->")
+        val=parent[val]
+    print(n)
+
 
 
 bfs(node, L)
